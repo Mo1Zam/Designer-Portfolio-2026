@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #0a0a0a;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-charcoal text-white font-sans antialiased;
+  }
+}
+
+/* Animations for JavaScript intersection observer */
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-fade.is-visible {
+  opacity: 1;
+}
+
+.reveal-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-slide-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.masonry-grid {
+  display: block;
+  column-count: 2;
+  column-gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-count: 2;
+    column-gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+  }
+}
+
+.masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  break-inside: avoid;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 768px) {
+  .masonry-item {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.thumbnail-media {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+  .masonry-item:hover {
+    transform: scale(1.02); /* Slight lift for the container */
+  }
+
+  .masonry-item:hover .thumbnail-media {
+    transform: scale(1.08); /* More pronounced scale for the media itself */
+  }
+}
+
+/* Frosted glass effect */
+.glass {
+  @apply backdrop-blur-md bg-white/5 border border-white/10;
+}
+
+.hero-text {
+  @apply text-[clamp(3rem,10vw,8rem)] leading-[0.85] italic uppercase tracking-tighter;
+}
+
+/* Lightbox controls */
+.lightbox-btn {
+  @apply w-12 h-12 rounded-full flex items-center justify-center bg-white/10 hover:bg-white text-white hover:text-black transition-all duration-300;
+}
+
+/* Apple iOS HIG Typographic Scale Utilities (Mobile-first, responsive) */
+.ios-large-title {
+  font-size: 34px;
+  line-height: 41px;
+  font-weight: 800;
+  letter-spacing: 0.37px;
+}
+
+.ios-title-1 {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+  letter-spacing: 0.36px;
+}
+
+.ios-title-2 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+}
+
+.ios-title-3 {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 600;
+  letter-spacing: 0.38px;
+}
+
+.ios-headline {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: -0.41px;
+}
+
+.ios-body {
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: -0.41px;
+}
+
+.ios-callout {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+}
+
+.ios-subhead {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+}
+
+.ios-footnote {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: -0.08px;
+}
+
+.ios-caption-1 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.ios-caption-2 {
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: 400;
+  letter-spacing: 0.07px;
+}
+
