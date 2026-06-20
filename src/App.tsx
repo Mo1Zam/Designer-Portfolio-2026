@@ -800,7 +800,7 @@ export default function App() {
                 26.8467° N, 80.9462° E
               </p>
               <div className="pt-4">
-                <a href="mailto:hello@frameflow.studio" className="text-sm font-bold border-b border-white/20 pb-1 hover:border-white transition-colors">
+                <a href="mailto:sayedsha0021@gmail.com" className="text-sm font-bold border-b border-white/20 pb-1 hover:border-white transition-colors">
                   sayedsha0021@gmail.com
                 </a>
               </div>
