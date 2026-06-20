@@ -285,142 +285,34 @@ const SOFTWARE_MAP: Record<string, { short: string; bg: string; text: string; bo
 
 const SOFTWARE_ICONS: Record<string, string> = {
   "after effects": `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-full h-full rounded-sm shadow-[0_0_12px_rgba(144,68,255,0.15)] hover:shadow-[0_0_24px_rgba(144,68,255,0.45)] transition-all duration-300">
-      <rect width="48" height="48" rx="8" fill="#030010" />
-      <rect x="1" y="1" width="46" height="46" rx="7" fill="none" stroke="#9044FF" stroke-width="1.5" opacity="0.6" />
-      <rect x="2.5" y="2.5" width="43" height="43" rx="5.5" fill="url(#ae-grad)" />
-      <defs>
-        <linearGradient id="ae-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#14002D" />
-          <stop offset="100%" stop-color="#04000C" />
-        </linearGradient>
-      </defs>
-      <text x="24" y="31.5" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#E4C1FF" text-anchor="middle" letter-spacing="-0.5">Ae</text>
-    </svg>
+    <img src="/images/Software icons/After Effects.png" class="w-full h-full rounded-sm object-contain hover:scale-105 transition-transform duration-300" alt="After Effects" referrerPolicy="no-referrer" />
   `,
   "adobe after effects": `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-full h-full rounded-sm shadow-[0_0_12px_rgba(144,68,255,0.15)] hover:shadow-[0_0_24px_rgba(144,68,255,0.45)] transition-all duration-300">
-      <rect width="48" height="48" rx="8" fill="#030010" />
-      <rect x="1" y="1" width="46" height="46" rx="7" fill="none" stroke="#9044FF" stroke-width="1.5" opacity="0.6" />
-      <rect x="2.5" y="2.5" width="43" height="43" rx="5.5" fill="url(#ae-grad)" />
-      <defs>
-        <linearGradient id="ae-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#14002D" />
-          <stop offset="100%" stop-color="#04000C" />
-        </linearGradient>
-      </defs>
-      <text x="24" y="31.5" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#E4C1FF" text-anchor="middle" letter-spacing="-0.5">Ae</text>
-    </svg>
+    <img src="/images/Software icons/After Effects.png" class="w-full h-full rounded-sm object-contain hover:scale-105 transition-transform duration-300" alt="After Effects" referrerPolicy="no-referrer" />
   `,
   "premiere pro": `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-full h-full rounded-sm shadow-[0_0_12px_rgba(224,86,253,0.15)] hover:shadow-[0_0_24px_rgba(224,86,253,0.45)] transition-all duration-300">
-      <rect width="48" height="48" rx="8" fill="#05000C" />
-      <rect x="1" y="1" width="46" height="46" rx="7" fill="none" stroke="#e056fd" stroke-width="1.5" opacity="0.6" />
-      <rect x="2.5" y="2.5" width="43" height="43" rx="5.5" fill="url(#pr-grad)" />
-      <defs>
-        <linearGradient id="pr-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#1B0030" />
-          <stop offset="100%" stop-color="#070014" />
-        </linearGradient>
-      </defs>
-      <text x="24" y="31.5" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#FFC9FE" text-anchor="middle" letter-spacing="-0.5">Pr</text>
-    </svg>
+    <img src="/images/Software icons/Premiere Pro.png" class="w-full h-full rounded-sm object-contain hover:scale-105 transition-transform duration-300" alt="Premiere Pro" referrerPolicy="no-referrer" />
   `,
   "adobe premiere pro": `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-full h-full rounded-sm shadow-[0_0_12px_rgba(224,86,253,0.15)] hover:shadow-[0_0_24px_rgba(224,86,253,0.45)] transition-all duration-300">
-      <rect width="48" height="48" rx="8" fill="#05000C" />
-      <rect x="1" y="1" width="46" height="46" rx="7" fill="none" stroke="#e056fd" stroke-width="1.5" opacity="0.6" />
-      <rect x="2.5" y="2.5" width="43" height="43" rx="5.5" fill="url(#pr-grad)" />
-      <defs>
-        <linearGradient id="pr-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#1B0030" />
-          <stop offset="100%" stop-color="#070014" />
-        </linearGradient>
-      </defs>
-      <text x="24" y="31.5" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#FFC9FE" text-anchor="middle" letter-spacing="-0.5">Pr</text>
-    </svg>
+    <img src="/images/Software icons/Premiere Pro.png" class="w-full h-full rounded-sm object-contain hover:scale-105 transition-transform duration-300" alt="Premiere Pro" referrerPolicy="no-referrer" />
   `,
   "photoshop": `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-full h-full rounded-sm shadow-[0_0_12px_rgba(0,197,255,0.15)] hover:shadow-[0_0_24px_rgba(0,197,255,0.45)] transition-all duration-300">
-      <rect width="48" height="48" rx="8" fill="#000615" />
-      <rect x="1" y="1" width="46" height="46" rx="7" fill="none" stroke="#00C5FF" stroke-width="1.5" opacity="0.6" />
-      <rect x="2.5" y="2.5" width="43" height="43" rx="5.5" fill="url(#ps-grad)" />
-      <defs>
-        <linearGradient id="ps-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#001430" />
-          <stop offset="100%" stop-color="#000410" />
-        </linearGradient>
-      </defs>
-      <text x="24" y="31.5" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#A8EBFF" text-anchor="middle" letter-spacing="-0.5">Ps</text>
-    </svg>
+    <img src="/images/Software icons/Photoshop.png" class="w-full h-full rounded-sm object-contain hover:scale-105 transition-transform duration-300" alt="Photoshop" referrerPolicy="no-referrer" />
   `,
   "adobe photoshop": `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-full h-full rounded-sm shadow-[0_0_12px_rgba(0,197,255,0.15)] hover:shadow-[0_0_24px_rgba(0,197,255,0.45)] transition-all duration-300">
-      <rect width="48" height="48" rx="8" fill="#000615" />
-      <rect x="1" y="1" width="46" height="46" rx="7" fill="none" stroke="#00C5FF" stroke-width="1.5" opacity="0.6" />
-      <rect x="2.5" y="2.5" width="43" height="43" rx="5.5" fill="url(#ps-grad)" />
-      <defs>
-        <linearGradient id="ps-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#001430" />
-          <stop offset="100%" stop-color="#000410" />
-        </linearGradient>
-      </defs>
-      <text x="24" y="31.5" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#A8EBFF" text-anchor="middle" letter-spacing="-0.5">Ps</text>
-    </svg>
+    <img src="/images/Software icons/Photoshop.png" class="w-full h-full rounded-sm object-contain hover:scale-105 transition-transform duration-300" alt="Photoshop" referrerPolicy="no-referrer" />
   `,
   "illustrator": `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-full h-full rounded-sm shadow-[0_0_12px_rgba(255,147,0,0.15)] hover:shadow-[0_0_24px_rgba(255,147,0,0.45)] transition-all duration-300">
-      <rect width="48" height="48" rx="8" fill="#0D0600" />
-      <rect x="1" y="1" width="46" height="46" rx="7" fill="none" stroke="#FF9300" stroke-width="1.5" opacity="0.6" />
-      <rect x="2.5" y="2.5" width="43" height="43" rx="5.5" fill="url(#ai-grad)" />
-      <defs>
-        <linearGradient id="ai-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#2D1400" />
-          <stop offset="100%" stop-color="#0F0300" />
-        </linearGradient>
-      </defs>
-      <text x="24" y="31.5" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#FFE5C2" text-anchor="middle" letter-spacing="-0.5">Ai</text>
-    </svg>
+    <img src="/images/Software icons/Illustrator.png" class="w-full h-full rounded-sm object-contain hover:scale-105 transition-transform duration-300" alt="Illustrator" referrerPolicy="no-referrer" />
   `,
   "adobe illustrator": `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-full h-full rounded-sm shadow-[0_0_12px_rgba(255,147,0,0.15)] hover:shadow-[0_0_24px_rgba(255,147,0,0.45)] transition-all duration-300">
-      <rect width="48" height="48" rx="8" fill="#0D0600" />
-      <rect x="1" y="1" width="46" height="46" rx="7" fill="none" stroke="#FF9300" stroke-width="1.5" opacity="0.6" />
-      <rect x="2.5" y="2.5" width="43" height="43" rx="5.5" fill="url(#ai-grad)" />
-      <defs>
-        <linearGradient id="ai-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#2D1400" />
-          <stop offset="100%" stop-color="#0F0300" />
-        </linearGradient>
-      </defs>
-      <text x="24" y="31.5" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#FFE5C2" text-anchor="middle" letter-spacing="-0.5">Ai</text>
-    </svg>
+    <img src="/images/Software icons/Illustrator.png" class="w-full h-full rounded-sm object-contain hover:scale-105 transition-transform duration-300" alt="Illustrator" referrerPolicy="no-referrer" />
   `,
   "figma": `
-    <svg viewBox="0 0 48 48" class="w-full h-full rounded-sm shadow-[0_0_12px_rgba(255,82,35,0.15)] hover:shadow-[0_0_24px_rgba(255,82,35,0.45)] transition-all duration-300" xmlns="http://www.w3.org/2000/svg">
-      <rect width="48" height="48" rx="8" fill="#1C1C1C" />
-      <g transform="translate(14, 8)">
-        <path d="M 5, 0 a 5,5 0 0,0 -5,5 a 5,5 0 0,0 5,5 h 5 v -10 z" fill="#F24E1E" />
-        <path d="M 15, 0 a 5,5 0 0,0 -5,5 v 5 h 5 a 5,5 0 0,0 5,-5 a 5,5 0 0,0 -5,-5 z" fill="#FF7262" />
-        <path d="M 5, 10 a 5,5 0 0,0 -5,5 a 5,5 0 0,0 5,5 h 5 v -10 z" fill="#A259FF" />
-        <circle cx="15" cy="15" r="5" fill="#1ABC9C" />
-        <path d="M 5, 20 a 5,5 0 0,0 -5,5 a 5,5 0 0,0 5,5 a 5,5 0 0,0 5,-5 v -5 z" fill="#5551FF" />
-      </g>
-    </svg>
+    <img src="/images/Software icons/Figma.png" class="w-full h-full rounded-sm object-contain hover:scale-105 transition-transform duration-300" alt="Figma" referrerPolicy="no-referrer" />
   `,
   "gemini": `
-    <svg viewBox="0 0 48 48" class="w-full h-full rounded-sm shadow-[0_0_12px_rgba(36,107,253,0.15)] hover:shadow-[0_0_24px_rgba(36,107,253,0.45)] transition-all duration-300" xmlns="http://www.w3.org/2000/svg">
-      <rect width="48" height="48" rx="8" fill="#040914" />
-      <path d="M24,7 C24,16.5 16.5,24 7,24 C16.5,24 24,31.5 24,41 C24,31.5 31.5,24 41,24 C31.5,24 24,16.5 24,7 Z" fill="url(#gemini-grad)" />
-      <defs>
-        <linearGradient id="gemini-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#9BC5FF" />
-          <stop offset="30%" stop-color="#246BFD" />
-          <stop offset="70%" stop-color="#E289FF" />
-          <stop offset="100%" stop-color="#FFBD9B" />
-        </linearGradient>
-      </defs>
-    </svg>
+    <img src="/images/Software icons/gemini.png" class="w-full h-full rounded-sm object-contain hover:scale-105 transition-transform duration-300" alt="Google Gemini AI" referrerPolicy="no-referrer" />
   `
 };
 

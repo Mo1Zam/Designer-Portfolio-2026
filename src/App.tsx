@@ -698,7 +698,7 @@ export default function App() {
         </section>
 
         {/* About Section */}
-        <section id="studio" className="px-6 md:px-12 py-24 border-y border-white/5 bg-[#080808] relative overflow-hidden">
+        <section id="studio" className="py-24 border-y border-white/5 bg-[#080808] relative overflow-hidden">
           <Particles
             className="absolute inset-0 z-0 pointer-events-none opacity-30"
             quantity={lowDataMode ? 20 : 140}
@@ -706,59 +706,127 @@ export default function App() {
             color="#ffffff"
             refresh
           />
-          <div className="max-w-4xl relative z-10">
-            <h2 className="reveal-slide-up text-[10px] font-bold uppercase tracking-[0.3em] opacity-30 mb-12">About Me</h2>
-            <div className="space-y-12">
-              <p className="reveal-slide-up text-[22px] md:text-3xl font-light leading-snug tracking-tight">
-                I am <span className="text-white font-medium italic">Mohammad Azam</span>, a professional video editor and graphic designer operating at the sharp end of digital media. With a Bachelor of Computer Applications degree and a Diploma of Advanced Media and Animation, my technical foundation is anchored in <span className="text-white font-medium italic">Adobe Premiere Pro and After Effects</span>. I specialize in transforming raw footage into high-impact narratives that thrive in the fast-paced ecosystems of top-tier agencies like <span className="opacity-60">Viral Buzz</span>, <span className="opacity-60">Designfin Studio</span>, and <span className="opacity-60">Communicadance</span>.
-              </p>
-              
-              <p className="reveal-slide-up text-[17px] md:text-xl opacity-50 leading-relaxed" style={{ transitionDelay: "150ms" }}>
-                My workflow is built for scale without sacrificing precision. I have a proven track record of high-velocity production, notably delivering <span className="text-white font-bold tracking-tighter">64 dynamic reels in a single month</span> while maintaining absolute control over pacing, visual rhythm, and brand impact. I don't just edit content; I engineer experiences that command attention.
-              </p>
+          <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
+              {/* Left Column: About Me */}
+              <div className="md:col-span-7 space-y-8">
+                <div>
+                  <h2 className="reveal-slide-up text-[10px] font-bold uppercase tracking-[0.3em] opacity-30 mb-8" id="about-me-header">About Me</h2>
+                  <p className="reveal-slide-up text-lg md:text-xl font-light leading-relaxed tracking-tight text-white/90">
+                    I am <span className="text-white font-medium italic">Mohammad Azam</span>, a professional video editor and graphic designer operating at the sharp end of digital media. With a Bachelor of Computer Applications degree and a Diploma of Advanced Media and Animation, my technical foundation is anchored in <span className="text-white font-medium italic">Adobe Premiere Pro and After Effects</span>. I specialize in transforming raw footage into high-impact narratives that thrive in the fast-paced ecosystems of top-tier agencies like <span className="opacity-60">Viral Buzz</span>, <span className="opacity-60">Designfin Studio</span>, and <span className="opacity-60">Communicadance</span>.
+                  </p>
+                </div>
+                
+                <p className="reveal-slide-up text-sm opacity-45 leading-relaxed" style={{ transitionDelay: "150ms" }}>
+                  My workflow is built for scale without sacrificing precision. I have a proven track record of high-velocity production, notably delivering <span className="text-white font-bold tracking-tighter">64 dynamic reels in a single month</span> while maintaining absolute control over pacing, visual rhythm, and brand impact. I don't just edit content; I engineer experiences that command attention.
+                </p>
+              </div>
+
+              {/* Right Column: Skills Section */}
+              <div className="md:col-span-5 space-y-8">
+                <div>
+                  <h2 className="reveal-slide-up text-[10px] font-bold uppercase tracking-[0.3em] opacity-30 mb-8" id="skills-header">Skills & Software</h2>
+                  
+                  {/* Tool List with software icons uploaded by user */}
+                  <div className="grid grid-cols-3 gap-3" id="skills-software-grid">
+                    {[
+                      { name: "After Effects", icon: "/images/Software icons/After Effects.png" },
+                      { name: "Premiere Pro", icon: "/images/Software icons/Premiere Pro.png" },
+                      { name: "Photoshop", icon: "/images/Software icons/Photoshop.png" },
+                      { name: "Illustrator", icon: "/images/Software icons/Illustrator.png" },
+                      { name: "Figma", icon: "/images/Software icons/Figma.png" },
+                      { name: "Gemini AI", icon: "/images/Software icons/gemini.png" },
+                    ].map((tool, idx) => (
+                      <div 
+                        key={tool.name} 
+                        id={`skill-card-${tool.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="bg-white/[0.01] border border-white/5 rounded-xl p-3 flex flex-col items-center justify-center gap-2 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 group"
+                      >
+                        <div className="w-8 h-8 flex items-center justify-center relative">
+                          <img 
+                            src={tool.icon} 
+                            alt={tool.name} 
+                            className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-300"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                        <span className="text-[9px] font-medium tracking-wider text-white/50 group-hover:text-white/80 transition-colors text-center mt-1">
+                          {tool.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Conceptual competencies list */}
+                <div className="space-y-4 pt-2">
+                  <h3 className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/45">Core Expertise</h3>
+                  <div className="flex flex-wrap gap-2" id="skills-expertise-badges">
+                    {[
+                      "Narrative Pacing & Rhythm",
+                      "Cinematic Color Grading",
+                      "Sound Design & SFX Syncing",
+                      "High-Velocity Deliveries",
+                      "Motion Typography",
+                      "Brand Storytelling",
+                      "AI-Assisted Pre-production"
+                    ].map((skill, sIdx) => (
+                      <span 
+                        key={skill}
+                        id={`expert-badge-${sIdx}`}
+                        className="text-[10px] px-3 py-1.5 rounded-full bg-white/[0.02] border border-white/5 text-white/60 font-light hover:text-white hover:border-white/20 transition-all cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Selected Work Section */}
-        <section id="work" className="px-6 md:px-12 py-24 md:py-32">
-          <div className="reveal-slide-up flex justify-between items-end mb-16">
-            <div>
-              <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-30 mb-4">Selected Work // 01-06</h2>
-            </div>
-            {/*<button 
-              className="hidden md:flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest opacity-60 hover:opacity-100 group"
-            >
-              View Archive <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
-            </button>*/}
-          </div>
-
-          <div className="masonry-grid font-sans">
-            {PROJECTS.map((project, index) => (
-              <div 
-                key={project.id}
-                className="reveal-slide-up"
-                style={{ transitionDelay: `${(index % 3) * 150}ms` }}
-              >
-                <VideoThumbnail 
-                  title={project.title}
-                  category={project.category}
-                  aspect={project.aspect}
-                  color={project.color}
-                  videoUrl={project.videoUrl}
-                  posterUrl={project.posterUrl}
-                  client={project.client}
-                  company={project.company}
-                  software={project.software}
-                  video={project.video}
-                  timeline={project.timeline}
-                  description={project.description}
-                  onClick={() => setLightboxProjectId(project.id)}
-                  onViewCaseStudy={() => handleProjectSelect(project.id)}
-                  lowDataMode={lowDataMode}
-                />
+        <section id="work" className="py-24 md:py-32">
+          <div className="max-w-5xl mx-auto px-6 md:px-12">
+            <div className="reveal-slide-up flex justify-between items-end mb-12">
+              <div>
+                <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-30 mb-4">Selected Work // 01-06</h2>
               </div>
-            ))}
+              {/*<button 
+                className="hidden md:flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest opacity-60 hover:opacity-100 group"
+              >
+                View Archive <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
+              </button>*/}
+            </div>
+
+            <div className="masonry-grid font-sans">
+              {PROJECTS.map((project, index) => (
+                <div 
+                  key={project.id}
+                  className="reveal-slide-up"
+                  style={{ transitionDelay: `${(index % 3) * 150}ms` }}
+                >
+                  <VideoThumbnail 
+                    title={project.title}
+                    category={project.category}
+                    aspect={project.aspect}
+                    color={project.color}
+                    videoUrl={project.videoUrl}
+                    posterUrl={project.posterUrl}
+                    client={project.client}
+                    company={project.company}
+                    software={project.software}
+                    video={project.video}
+                    timeline={project.timeline}
+                    description={project.description}
+                    onClick={() => setLightboxProjectId(project.id)}
+                    onViewCaseStudy={() => handleProjectSelect(project.id)}
+                    lowDataMode={lowDataMode}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -774,44 +842,46 @@ export default function App() {
         />
 
         {/* Footer */}
-        <footer className="px-6 md:px-12 py-12 border-t border-white/5 bg-[#080808]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div className="space-y-6">
-              <span className="text-xl font-black tracking-tighter">MOHD. AZAM</span>
-              <p className="text-sm opacity-40 leading-relaxed max-w-xs">
-                Pushing the boundaries of visual storytelling through technical excellence and creative vision.
-              </p>
+        <footer className="py-16 border-t border-white/5 bg-[#080808]">
+          <div className="max-w-5xl mx-auto px-6 md:px-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+              <div className="space-y-6">
+                <span className="text-xl font-black tracking-tighter">MOHD. AZAM</span>
+                <p className="text-sm opacity-40 leading-relaxed max-w-xs">
+                  Pushing the boundaries of visual storytelling through technical excellence and creative vision.
+                </p>
+              </div>
+              
+              <div className="space-y-4">
+                <h4 className="text-[10px] font-bold uppercase tracking-widest opacity-30">Connect</h4>
+                <div className="flex flex-col gap-2 text-sm">
+                  <a href="https://www.instagram.com/sayedsha0021/" className="hover:opacity-60 transition-opacity">Instagram</a>
+                  <a href="https://vimeo.com/user255769742" className="hover:opacity-60 transition-opacity">Vimeo</a>
+                  <a href="https://www.behance.net/azammohd2" className="hover:opacity-60 transition-opacity">Behance</a>
+                  <a href="www.linkedin.com/in/mohammad-azam-a56571173" className="hover:opacity-60 transition-opacity">LinkedIn</a>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h4 className="text-[10px] font-bold uppercase tracking-widest opacity-30">Location</h4>
+                <p className="text-sm opacity-60">
+                  Lucknow, India<br/>
+                  26.8467° N, 80.9462° E
+                </p>
+                <div className="pt-4">
+                  <a href="mailto:sayedsha0021@gmail.com" className="text-sm font-bold border-b border-white/20 pb-1 hover:border-white transition-colors">
+                    sayedsha0021@gmail.com
+                  </a>
+                </div>
+              </div>
             </div>
             
-            <div className="space-y-4">
-              <h4 className="text-[10px] font-bold uppercase tracking-widest opacity-30">Connect</h4>
-              <div className="flex flex-col gap-2 text-sm">
-                <a href="https://www.instagram.com/sayedsha0021/" className="hover:opacity-60 transition-opacity">Instagram</a>
-                <a href="https://vimeo.com/user255769742" className="hover:opacity-60 transition-opacity">Vimeo</a>
-                <a href="https://www.behance.net/azammohd2" className="hover:opacity-60 transition-opacity">Behance</a>
-                <a href="www.linkedin.com/in/mohammad-azam-a56571173" className="hover:opacity-60 transition-opacity">LinkedIn</a>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5 text-[10px] font-mono opacity-20">
+              <span>© 2024 MOHAMMAD AZAM. ALL RIGHTS RESERVED.</span>
+              <div className="flex gap-8">
+                <span>PRIVACY POLICY</span>
+                <span>TERMS OF SERVICE</span>
               </div>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-[10px] font-bold uppercase tracking-widest opacity-30">Location</h4>
-              <p className="text-sm opacity-60">
-                Lucknow, India<br/>
-                26.8467° N, 80.9462° E
-              </p>
-              <div className="pt-4">
-                <a href="mailto:sayedsha0021@gmail.com" className="text-sm font-bold border-b border-white/20 pb-1 hover:border-white transition-colors">
-                  sayedsha0021@gmail.com
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5 text-[10px] font-mono opacity-20">
-            <span>© 2024 MOHAMMAD AZAM. ALL RIGHTS RESERVED.</span>
-            <div className="flex gap-8">
-              <span>PRIVACY POLICY</span>
-              <span>TERMS OF SERVICE</span>
             </div>
           </div>
         </footer>
