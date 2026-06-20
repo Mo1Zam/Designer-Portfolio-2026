@@ -604,50 +604,54 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
                 </div>
               </div>
 
-              <div className="absolute bottom-12 left-6 md:left-12 z-20">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <div className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-4 flex items-center gap-4">
-                    <span className="modal-category"></span>
-                    <div className="h-[1px] w-12 bg-white/20" />
-                    <span className="modal-id"></span>
-                  </div>
-                  <h1 className="modal-title text-6xl md:text-9xl font-black italic uppercase tracking-tighter leading-[0.85]"></h1>
-                </motion.div>
+              <div className="absolute bottom-12 left-0 right-0 z-20 px-6 md:px-12 w-full">
+                <div className="max-w-5xl mx-auto w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <div className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-4 flex items-center gap-4">
+                      <span className="modal-category"></span>
+                      <div className="h-[1px] w-12 bg-white/20" />
+                      <span className="modal-id"></span>
+                    </div>
+                    <h1 className="modal-title text-5xl md:text-8xl font-black italic uppercase tracking-tighter leading-[0.85]"></h1>
+                  </motion.div>
+                </div>
               </div>
             </section>
 
             {/* 2. Two-Column 'Project Brief' Section */}
-            <section className="px-6 md:px-12 py-24 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 border-b border-white/5">
-              <div className="space-y-8">
-                <div className="flex items-center gap-4 opacity-30">
-                  <Target size={16} />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">Column A // Objectives</span>
+            <section className="px-6 md:px-12 py-24 border-b border-white/5">
+              <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
+                <div className="space-y-8">
+                  <div className="flex items-center gap-4 opacity-30">
+                    <Target size={16} />
+                    <span className="text-[10px] font-bold uppercase tracking-widest">Column A // Objectives</span>
+                  </div>
+                  <div>
+                    <h2 className="text-[28px] md:text-3xl font-light tracking-tight mb-6">Brief & Production Metrics</h2>
+                    <p className="modal-desc text-[17px] md:text-lg opacity-55 leading-relaxed max-w-xl"></p>
+                  </div>
+                  <div className="pt-8">
+                    <div className="text-[10px] font-mono opacity-20 uppercase mb-2">Client / Agency Name</div>
+                    <div className="modal-client text-[20px] md:text-xl font-light tracking-tight"></div>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="text-[28px] md:text-3xl font-light tracking-tight mb-6">Brief & Production Metrics</h2>
-                  <p className="modal-desc text-[17px] md:text-lg opacity-50 leading-relaxed max-w-xl"></p>
-                </div>
-                <div className="pt-8">
-                  <div className="text-[10px] font-mono opacity-20 uppercase mb-2">Client / Agency Name</div>
-                  <div className="modal-client text-[20px] md:text-xl font-light tracking-tight"></div>
-                </div>
-              </div>
 
-              <div className="space-y-8">
-                <div className="flex items-center gap-4 opacity-30">
-                  <Cpu size={16} />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">Column B // Software & Stack</span>
-                </div>
-                <div className="space-y-6">
-                  <p className="modal-workflow-brief text-[17px] md:text-lg opacity-50 leading-relaxed">
-                    Utilizing standard tools inside high-efficiency pipelines for rapid rendering, cinematic precision and seamless media delivery.
-                  </p>
-                  <div className="modal-software flex flex-wrap gap-4">
-                    {/* Empty target container for software tags */}
+                <div className="space-y-8">
+                  <div className="flex items-center gap-4 opacity-30">
+                    <Cpu size={16} />
+                    <span className="text-[10px] font-bold uppercase tracking-widest">Column B // Software & Stack</span>
+                  </div>
+                  <div className="space-y-6">
+                    <p className="modal-workflow-brief text-[17px] md:text-lg opacity-55 leading-relaxed">
+                      Utilizing standard tools inside high-efficiency pipelines for rapid rendering, cinematic precision and seamless media delivery.
+                    </p>
+                    <div className="modal-software flex flex-wrap gap-4">
+                      {/* Empty target container for software tags */}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -656,148 +660,150 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
             {/* 2.5 'Final Output Gallery' Section (Pinterest Masonry Style or Video Grid) */}
             {showGallery && (
               <section className="px-6 md:px-12 py-24 bg-[#050505] border-b border-white/5">
-                {videos.length > 0 ? (
-                  // Video Gallery Section
-                  <>
-                    <div className="mb-16 animate-fade-in">
-                      <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-30 mb-6 font-mono text-[#00f2fe]/80">Motion Deliverables // Video Gallery</h2>
-                      <p className="text-[34px] md:text-4xl font-light tracking-tight leading-tight max-w-2xl">High-fidelity final social clips, vertical edits, and master rendering sequences.</p>
-                      <p className="text-xs font-mono text-white/40 mt-3 flex items-center gap-2">
-                        <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#00f2fe] animate-pulse"></span>
-                        Click on any video clip to play in immersive theater mode
-                      </p>
-                    </div>
+                <div className="max-w-5xl mx-auto w-full">
+                  {videos.length > 0 ? (
+                    // Video Gallery Section
+                    <>
+                      <div className="mb-16 animate-fade-in">
+                        <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-30 mb-6 font-mono text-[#00f2fe]/80">Motion Deliverables // Video Gallery</h2>
+                        <p className="text-[34px] md:text-4xl font-light tracking-tight leading-tight max-w-2xl">High-fidelity final social clips, vertical edits, and master rendering sequences.</p>
+                        <p className="text-xs font-mono text-white/40 mt-3 flex items-center gap-2">
+                          <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#00f2fe] animate-pulse"></span>
+                          Click on any video clip to play in immersive theater mode
+                        </p>
+                      </div>
 
-                     <div className="columns-2 lg:columns-3 gap-3 md:gap-6 [column-fill:_balance] w-full">
-                      {videos.map((vidUrl, index) => {
-                        const initialCaption = captions[index] || project?.galleryCaptions?.[index] || "Production Deliverable";
-                        return (
-                          <GalleryVideoItem
-                            key={index}
-                            vidUrl={vidUrl}
-                            index={index}
-                            initialCaption={initialCaption}
-                            isUnmuted={unmutedIndex === index}
-                            onToggleMute={() => {
-                              setUnmutedIndex(unmutedIndex === index ? null : index);
-                            }}
-                            onEnlarge={(aspect) => {
-                              setEnlargedVideo({ url: vidUrl, caption: initialCaption, aspect });
-                            }}
-                          />
-                        );
-                      })}
-                    </div>
-                  </>
-                ) : (
-                  // Default Image Gallery Section
-                  <>
-                    <div className="mb-16 animate-fade-in">
-                      <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-30 mb-6 font-mono text-[#00f2fe]/80">Creative Deliverables // Final Output</h2>
-                      <p className="text-[34px] md:text-4xl font-light tracking-tight leading-tight max-w-2xl">High-fidelity final static assets, vector layouts, and master canvases.</p>
-                    </div>
-
-                    {/* Pinterest Masonry Grid */}
-                    {images.length > 0 && (
-                      <div className="columns-2 lg:columns-3 gap-3 md:gap-6 [column-fill:_balance] w-full">
-                        {images.map((imgUrl, index) => {
+                       <div className="columns-2 lg:columns-3 gap-3 md:gap-6 [column-fill:_balance] w-full">
+                        {videos.map((vidUrl, index) => {
                           const initialCaption = captions[index] || project?.galleryCaptions?.[index] || "Production Deliverable";
-                          const isEditing = editingIndex === index;
-                          const isPdf = imgUrl.toLowerCase().endsWith(".pdf") || imgUrl.toLowerCase().includes(".pdf");
+                          return (
+                            <GalleryVideoItem
+                              key={index}
+                              vidUrl={vidUrl}
+                              index={index}
+                              initialCaption={initialCaption}
+                              isUnmuted={unmutedIndex === index}
+                              onToggleMute={() => {
+                                setUnmutedIndex(unmutedIndex === index ? null : index);
+                              }}
+                              onEnlarge={(aspect) => {
+                                setEnlargedVideo({ url: vidUrl, caption: initialCaption, aspect });
+                              }}
+                            />
+                          );
+                        })}
+                      </div>
+                    </>
+                  ) : (
+                    // Default Image Gallery Section
+                    <>
+                      <div className="mb-16 animate-fade-in">
+                        <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-30 mb-6 font-mono text-[#00f2fe]/80">Creative Deliverables // Final Output</h2>
+                        <p className="text-[34px] md:text-4xl font-light tracking-tight leading-tight max-w-2xl">High-fidelity final static assets, vector layouts, and master canvases.</p>
+                      </div>
 
-                          if (isPdf) {
-                            return (
+                      {/* Pinterest Masonry Grid */}
+                      {images.length > 0 && (
+                        <div className="columns-2 lg:columns-3 gap-3 md:gap-6 [column-fill:_balance] w-full">
+                          {images.map((imgUrl, index) => {
+                            const initialCaption = captions[index] || project?.galleryCaptions?.[index] || "Production Deliverable";
+                            const isEditing = editingIndex === index;
+                            const isPdf = imgUrl.toLowerCase().endsWith(".pdf") || imgUrl.toLowerCase().includes(".pdf");
+
+                            if (isPdf) {
+                              return (
+                                <BlurFade 
+                                  key={index} 
+                                  delay={0.15 + index * 0.05} 
+                                  inView
+                                  className="break-inside-avoid mb-3 md:mb-6 cursor-pointer"
+                                >
+                                  <div 
+                                    onClick={() => setEnlargedPdf({ url: getCleanUrl(imgUrl), caption: initialCaption })}
+                                    className="relative overflow-hidden group border border-[#00f2fe]/10 hover:border-[#00f2fe]/40 rounded-none bg-neutral-950/80 p-8 flex flex-col justify-between hover:bg-[#0c0c0c] aspect-[3/4] transition-all duration-500 ease-out shadow-[0_4px_30px_rgba(0,0,0,0.6)]"
+                                  >
+                                    {/* Grid background pattern */}
+                                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.01)_1px,_transparent_1px)] bg-[size:16px_16px] pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#00f2fe]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    
+                                    {/* Top badges */}
+                                    <div className="flex items-center justify-between z-10">
+                                      <span className="text-[8px] font-mono tracking-[0.2em] text-[#00f2fe] uppercase border border-[#00f2fe]/20 px-2.5 py-1 bg-[#00f2fe]/5">
+                                        PDF Document
+                                      </span>
+                                      <FileText size={18} className="text-[#00f2fe] opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" />
+                                    </div>
+                                    
+                                    {/* Middle Visual Element */}
+                                    <div className="flex flex-col items-center justify-center py-6 text-center z-10">
+                                      <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-105 group-hover:border-[#00f2fe]/30 group-hover:bg-white/10 transition-all duration-500">
+                                        <FileText size={24} className="text-[#00f2fe]" />
+                                      </div>
+                                      <span className="text-[10px] font-mono tracking-widest text-white/50 uppercase">Interactive View</span>
+                                      <span className="text-[8px] font-mono text-white/30 mt-1 uppercase tracking-widest">A4 Specification</span>
+                                    </div>
+                                    
+                                    {/* Footer metadata info */}
+                                    <div className="z-10 pt-4 border-t border-white/5">
+                                      <h4 className="text-xs font-bold uppercase tracking-wider text-white group-hover:text-[#00f2fe] transition-colors duration-300 truncate">
+                                        {initialCaption}
+                                      </h4>
+                                      <div className="flex items-center justify-between mt-2.5">
+                                        <span className="text-[8px] font-mono text-white/30 truncate max-w-[65%]">
+                                          {imgUrl.split("/").pop()}
+                                        </span>
+                                        <span className="text-[8px] font-mono text-[#00f2fe]/80 group-hover:translate-x-1.5 transition-transform duration-350 flex items-center gap-1 font-bold">
+                                          READ DOCUMENT &rarr;
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </BlurFade>
+                              );
+                            }
+
+                             return (
                               <BlurFade 
                                 key={index} 
                                 delay={0.15 + index * 0.05} 
                                 inView
-                                className="break-inside-avoid mb-3 md:mb-6 cursor-pointer"
+                                className="break-inside-avoid mb-3 md:mb-6"
                               >
                                 <div 
-                                  onClick={() => setEnlargedPdf({ url: getCleanUrl(imgUrl), caption: initialCaption })}
-                                  className="relative overflow-hidden group border border-[#00f2fe]/10 hover:border-[#00f2fe]/40 rounded-none bg-neutral-950/80 p-8 flex flex-col justify-between hover:bg-[#0c0c0c] aspect-[3/4] transition-all duration-500 ease-out shadow-[0_4px_30px_rgba(0,0,0,0.6)]"
+                                  onClick={() => setEnlargedImage({ url: getCleanUrl(imgUrl), caption: initialCaption, index })}
+                                  className="relative overflow-hidden group border border-white/5 rounded-none bg-neutral-950/40 cursor-zoom-in"
                                 >
-                                  {/* Grid background pattern */}
-                                  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.01)_1px,_transparent_1px)] bg-[size:16px_16px] pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity" />
-                                  <div className="absolute inset-0 bg-gradient-to-t from-[#00f2fe]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                  <img 
+                                    src={getCleanUrl(imgUrl)} 
+                                    alt={initialCaption}
+                                    className="w-full h-auto object-cover brightness-100 transition-all duration-700 ease-out group-hover:scale-[1.02]"
+                                    onError={(e) => {
+                                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?auto=format&fit=crop&q=80&w=800";
+                                    }}
+                                  />
                                   
-                                  {/* Top badges */}
-                                  <div className="flex items-center justify-between z-10">
-                                    <span className="text-[8px] font-mono tracking-[0.2em] text-[#00f2fe] uppercase border border-[#00f2fe]/20 px-2.5 py-1 bg-[#00f2fe]/5">
-                                      PDF Document
-                                    </span>
-                                    <FileText size={18} className="text-[#00f2fe] opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" />
-                                  </div>
-                                  
-                                  {/* Middle Visual Element */}
-                                  <div className="flex flex-col items-center justify-center py-6 text-center z-10">
-                                    <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-105 group-hover:border-[#00f2fe]/30 group-hover:bg-white/10 transition-all duration-500">
-                                      <FileText size={24} className="text-[#00f2fe]" />
+                                  {/* Hover Caption Overlay */}
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-350 flex flex-col justify-end p-6 select-none">
+                                    <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white/70 group-hover:text-[#00f2fe] group-hover:scale-110 transition-all duration-300">
+                                      <Maximize2 size={12} />
                                     </div>
-                                    <span className="text-[10px] font-mono tracking-widest text-white/50 uppercase">Interactive View</span>
-                                    <span className="text-[8px] font-mono text-white/30 mt-1 uppercase tracking-widest">A4 Specification</span>
-                                  </div>
-                                  
-                                  {/* Footer metadata info */}
-                                  <div className="z-10 pt-4 border-t border-white/5">
-                                    <h4 className="text-xs font-bold uppercase tracking-wider text-white group-hover:text-[#00f2fe] transition-colors duration-300 truncate">
+                                    <span className="text-[9px] font-mono text-[#00f2fe]/90 mb-1">{`WORK_CANVAS_0${index + 1}`}</span>
+                                    <h4 className="text-xs font-bold uppercase tracking-wider text-white">
                                       {initialCaption}
                                     </h4>
-                                    <div className="flex items-center justify-between mt-2.5">
-                                      <span className="text-[8px] font-mono text-white/30 truncate max-w-[65%]">
-                                        {imgUrl.split("/").pop()}
-                                      </span>
-                                      <span className="text-[8px] font-mono text-[#00f2fe]/80 group-hover:translate-x-1.5 transition-transform duration-350 flex items-center gap-1 font-bold">
-                                        READ DOCUMENT &rarr;
-                                      </span>
-                                    </div>
+                                    <span className="text-[8px] font-mono text-white/30 mt-1 uppercase tracking-widest">
+                                      Click to Enlarge
+                                    </span>
                                   </div>
                                 </div>
                               </BlurFade>
                             );
-                          }
-
-                           return (
-                            <BlurFade 
-                              key={index} 
-                              delay={0.15 + index * 0.05} 
-                              inView
-                              className="break-inside-avoid mb-3 md:mb-6"
-                            >
-                              <div 
-                                onClick={() => setEnlargedImage({ url: getCleanUrl(imgUrl), caption: initialCaption, index })}
-                                className="relative overflow-hidden group border border-white/5 rounded-none bg-neutral-950/40 cursor-zoom-in"
-                              >
-                                <img 
-                                  src={getCleanUrl(imgUrl)} 
-                                  alt={initialCaption}
-                                  className="w-full h-auto object-cover brightness-100 transition-all duration-700 ease-out group-hover:scale-[1.02]"
-                                  onError={(e) => {
-                                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?auto=format&fit=crop&q=80&w=800";
-                                  }}
-                                />
-                                
-                                {/* Hover Caption Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-350 flex flex-col justify-end p-6 select-none">
-                                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white/70 group-hover:text-[#00f2fe] group-hover:scale-110 transition-all duration-300">
-                                    <Maximize2 size={12} />
-                                  </div>
-                                  <span className="text-[9px] font-mono text-[#00f2fe]/90 mb-1">{`WORK_CANVAS_0${index + 1}`}</span>
-                                  <h4 className="text-xs font-bold uppercase tracking-wider text-white">
-                                    {initialCaption}
-                                  </h4>
-                                  <span className="text-[8px] font-mono text-white/30 mt-1 uppercase tracking-widest">
-                                    Click to Enlarge
-                                  </span>
-                                </div>
-                              </div>
-                            </BlurFade>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </>
-                )}
+                          })}
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
               </section>
             )}
 
