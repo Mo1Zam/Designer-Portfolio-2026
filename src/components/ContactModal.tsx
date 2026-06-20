@@ -29,9 +29,20 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
             <div className="relative z-10">
               <div className="flex justify-between items-start mb-12">
-                <div>
-                  <h2 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-30 mb-2">Connect // Initializing</h2>
-                  <p className="text-2xl font-black italic uppercase tracking-tighter">Direct Channels</p>
+                <div className="flex items-center gap-4">
+                  <img 
+                    src="/images/Website icons/LogoLogo.png" 
+                    alt="Mohammad Azam Logo" 
+                    className="h-10 w-auto object-contain filter"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "/images/Website icons/Main Logo.png";
+                    }}
+                  />
+                  <div>
+                    <h2 className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-30 mb-0.5">Connect // Initializing</h2>
+                    <p className="text-2xl font-black italic uppercase tracking-tighter">Direct Channels</p>
+                  </div>
                 </div>
                 <button 
                   onClick={onClose}

@@ -560,13 +560,22 @@ export default function App() {
             {/* Header / Brand */}
             <div className="flex items-center justify-between w-full md:w-auto">
               <span 
-                className="text-sm font-black tracking-tighter uppercase cursor-pointer text-white hover:text-[#00f2fe] transition-colors duration-300"
+                className="text-sm font-black tracking-tighter uppercase cursor-pointer text-white hover:text-[#00f2fe] transition-colors duration-300 flex items-center gap-2 select-none"
                 onClick={() => {
                   handleBack();
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                M. Azam
+                <img 
+                  src="/images/Website icons/LogoLogo.png" 
+                  alt="Mohammad Azam Logo" 
+                  className="h-5 w-auto object-contain filter hover:scale-105 transition-all duration-300"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = "/images/Website icons/Main Logo.png";
+                  }}
+                />
+                <span>M. Azam</span>
               </span>
               
               {/* Mobile Menu Toggle Button */}
