@@ -327,7 +327,7 @@ function UniversalVideoBackground({ url, lowDataMode }: UniversalVideoBackground
     return (
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <iframe
-          src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&loop=1&muted=1&background=1&autoplay=1`}
+          src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&autopause=0`}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180vh] h-[56.25vw] min-w-full min-h-full scale-[1.3] grayscale opacity-40"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
