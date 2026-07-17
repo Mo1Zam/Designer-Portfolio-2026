@@ -341,6 +341,7 @@ function UniversalVideoBackground({ url, lowDataMode }: UniversalVideoBackground
   return (
     <video
       ref={videoRef}
+      src={url || undefined}
       autoPlay
       muted
       playsInline
@@ -348,9 +349,7 @@ function UniversalVideoBackground({ url, lowDataMode }: UniversalVideoBackground
       onContextMenu={(e: React.MouseEvent) => e.preventDefault()}
       className="w-full h-full object-cover grayscale opacity-40 scale-105"
       poster={undefined}
-    >
-      <source src={url} type="video/mp4" />
-    </video>
+    />
   );
 }
 
@@ -665,7 +664,7 @@ export default function App() {
         <section className="relative h-screen w-full flex items-center px-6 md:px-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-b from-charcoal/20 via-charcoal/40 to-charcoal z-10" />
-            <UniversalVideoBackground url="/Videos/Thumnails/Hero Page.mp4" lowDataMode={lowDataMode} />
+            <UniversalVideoBackground url="/Videos/Thumnails/Hero%20Page.mp4" lowDataMode={lowDataMode} />
           </div>
 
           <div className="relative z-20 w-full pt-20">
