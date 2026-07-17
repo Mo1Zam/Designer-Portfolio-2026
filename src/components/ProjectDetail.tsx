@@ -362,7 +362,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
     if (project) {
       setShowGallery(!!project.showGallery);
       setImages((project.galleryImages || []).filter(img => img && img.trim() !== ""));
-      setVideos(project.project?.galleryVideos || (project as any).galleryVideos || []);
+      setVideos(project.galleryVideos || []);
       setUnmutedIndex(null);
       setEnlargedVideo(null);
       setEnlargedPdf(null);
@@ -370,7 +370,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
 
       const stored = localStorage.getItem(`gallery_captions_${project.id}`);
       const fallbackCaptions = project.galleryCaptions || [];
-      const totalItemsLength = Math.max((project.galleryImages || []).length, (project.project?.galleryVideos || (project as any).galleryVideos || []).length);
+      const totalItemsLength = Math.max((project.galleryImages || []).length, (project.galleryVideos || []).length);
 
       if (stored) {
         try {
