@@ -367,11 +367,11 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
       setEnlargedVideo(null);
       setEnlargedPdf(null);
       setEnlargedImage(null);
-      
+
       const stored = localStorage.getItem(`gallery_captions_${project.id}`);
       const fallbackCaptions = project.galleryCaptions || [];
       const totalItemsLength = Math.max((project.galleryImages || []).length, (project.project?.galleryVideos || (project as any).galleryVideos || []).length);
-      
+
       if (stored) {
         try {
           const parsed = JSON.parse(stored);
@@ -460,12 +460,12 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
           const normalized = item.toLowerCase();
           const fullName = SOFTWARE_MAP[normalized]?.fullName || item;
           const svgContent = SOFTWARE_ICONS[normalized] || getFallbackIcon(item);
-          
+
           const div = document.createElement("div");
           // Beautiful signature square app tile utilizing the latest high-fidelity vector icons
           div.className = `w-12 h-12 flex items-center justify-center rounded-sm transition-all duration-300 select-none cursor-help relative group active:scale-95`;
           div.setAttribute("title", fullName);
-          
+
           div.innerHTML = `
             ${svgContent}
             <span class="absolute bottom-full mb-2.5 hidden group-hover:block bg-black/95 text-[8px] font-mono tracking-widest text-[#00f2fe] uppercase px-2 py-1 border border-[#00f2fe]/20 whitespace-nowrap shadow-xl z-50 pointer-events-none">
@@ -481,7 +481,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
       // 4. Video player src update and load
       const videoEl = document.querySelector(".modal-video") as HTMLVideoElement;
       const containerEl = document.querySelector(".modal-video-container");
-      
+
       if (videoEl && containerEl) {
         const url = project.video || "";
         const ytId = getYouTubeId(url);
@@ -518,7 +518,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
           videoEl.src = url;
           try {
             videoEl.load();
-            videoEl.play().catch(() => {});
+            videoEl.play().catch(() => { });
           } catch (e) {
             // Ignore error
           }
@@ -556,7 +556,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -564,7 +564,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
         >
           {/* Fixed Close Button */}
           <div className="fixed top-6 right-6 z-[310]" style={{ pointerEvents: (enlargedVideo || enlargedPdf) ? "none" : "auto" }}>
-            <button 
+            <button
               onClick={(e) => {
                 if (enlargedVideo || enlargedPdf) {
                   e.stopPropagation();
@@ -583,14 +583,14 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
             <section className="relative h-[60vh] md:h-[85vh] w-full overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10" />
               <div className={`absolute inset-0 bg-gradient-to-br ${project?.color || "from-purple-500/20"} opacity-20 z-0`} />
-              
+
               {/* Wide Hero Placeholder (Final Looping Video HTML template - starts blank) */}
               <div className="absolute inset-0 flex items-center justify-center bg-[#111] modal-video-container">
-                <video 
+                <video
                   ref={videoRef}
-                  autoPlay 
-                  muted 
-                  loop 
+                  autoPlay
+                  muted
+                  loop
                   playsInline
                   preload="metadata"
                   controlsList="nodownload"
@@ -629,7 +629,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
                 <div className="space-y-8">
                   <div className="flex items-center gap-4 opacity-30">
                     <Target size={16} />
-                    <span className="text-[10px] font-bold uppercase tracking-widest">Column A // Objectives</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest">Objectives</span>
                   </div>
                   <div>
                     <h2 className="text-[28px] md:text-3xl font-light tracking-tight mb-6">Brief & Production Metrics</h2>
@@ -644,7 +644,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
                 <div className="space-y-8">
                   <div className="flex items-center gap-4 opacity-30">
                     <Cpu size={16} />
-                    <span className="text-[10px] font-bold uppercase tracking-widest">Column B // Software & Stack</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest">Software & Stack</span>
                   </div>
                   <div className="space-y-6">
                     <p className="modal-workflow-brief text-[17px] md:text-lg opacity-55 leading-relaxed">
@@ -674,7 +674,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
                         </p>
                       </div>
 
-                       <div className="columns-2 lg:columns-3 gap-3 md:gap-6 [column-fill:_balance] w-full">
+                      <div className="columns-2 lg:columns-3 gap-3 md:gap-6 [column-fill:_balance] w-full">
                         {videos.map((vidUrl, index) => {
                           const initialCaption = captions[index] || project?.galleryCaptions?.[index] || "Production Deliverable";
                           return (
@@ -713,20 +713,20 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
 
                             if (isPdf) {
                               return (
-                                <BlurFade 
-                                  key={index} 
-                                  delay={0.15 + index * 0.05} 
+                                <BlurFade
+                                  key={index}
+                                  delay={0.15 + index * 0.05}
                                   inView
                                   className="break-inside-avoid mb-3 md:mb-6 cursor-pointer"
                                 >
-                                  <div 
+                                  <div
                                     onClick={() => setEnlargedPdf({ url: getCleanUrl(imgUrl), caption: initialCaption })}
                                     className="relative overflow-hidden group border border-[#00f2fe]/10 hover:border-[#00f2fe]/40 rounded-none bg-neutral-950/80 p-8 flex flex-col justify-between hover:bg-[#0c0c0c] aspect-[3/4] transition-all duration-500 ease-out shadow-[0_4px_30px_rgba(0,0,0,0.6)]"
                                   >
                                     {/* Grid background pattern */}
                                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.01)_1px,_transparent_1px)] bg-[size:16px_16px] pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#00f2fe]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                    
+
                                     {/* Top badges */}
                                     <div className="flex items-center justify-between z-10">
                                       <span className="text-[8px] font-mono tracking-[0.2em] text-[#00f2fe] uppercase border border-[#00f2fe]/20 px-2.5 py-1 bg-[#00f2fe]/5">
@@ -734,7 +734,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
                                       </span>
                                       <FileText size={18} className="text-[#00f2fe] opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" />
                                     </div>
-                                    
+
                                     {/* Middle Visual Element */}
                                     <div className="flex flex-col items-center justify-center py-6 text-center z-10">
                                       <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-105 group-hover:border-[#00f2fe]/30 group-hover:bg-white/10 transition-all duration-500">
@@ -743,7 +743,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
                                       <span className="text-[10px] font-mono tracking-widest text-white/50 uppercase">Interactive View</span>
                                       <span className="text-[8px] font-mono text-white/30 mt-1 uppercase tracking-widest">A4 Specification</span>
                                     </div>
-                                    
+
                                     {/* Footer metadata info */}
                                     <div className="z-10 pt-4 border-t border-white/5">
                                       <h4 className="text-xs font-bold uppercase tracking-wider text-white group-hover:text-[#00f2fe] transition-colors duration-300 truncate">
@@ -763,26 +763,27 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
                               );
                             }
 
-                             return (
-                              <BlurFade 
-                                key={index} 
-                                delay={0.15 + index * 0.05} 
+                            return (
+                              <BlurFade
+                                key={index}
+                                delay={0.15 + index * 0.05}
                                 inView
                                 className="break-inside-avoid mb-3 md:mb-6"
+
                               >
-                                <div 
+                                <div
                                   onClick={() => setEnlargedImage({ url: getCleanUrl(imgUrl), caption: initialCaption, index })}
                                   className="relative overflow-hidden group border border-white/5 rounded-none bg-neutral-950/40 cursor-zoom-in"
                                 >
-                                  <img 
-                                    src={getCleanUrl(imgUrl)} 
+                                  <img
+                                    src={getCleanUrl(imgUrl)}
                                     alt={initialCaption}
                                     className="w-full h-auto object-cover brightness-100 transition-all duration-700 ease-out group-hover:scale-[1.02]"
                                     onError={(e) => {
                                       (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?auto=format&fit=crop&q=80&w=800";
                                     }}
                                   />
-                                  
+
                                   {/* Hover Caption Overlay */}
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-350 flex flex-col justify-end p-6 select-none">
                                     <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white/70 group-hover:text-[#00f2fe] group-hover:scale-110 transition-all duration-300">
@@ -813,12 +814,12 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
             {/* Footer Section */}
             <section className="px-6 md:px-12 py-32 text-center border-t border-white/5 bg-[#0a0a0a]">
               <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-20 mb-12">Case Study End // Next Project</h2>
-              <div 
+              <div
                 onClick={onBack}
                 className="group cursor-pointer inline-block"
               >
                 <div className="overflow-hidden">
-                  <motion.h3 
+                  <motion.h3
                     whileHover={{ y: "-100%" }}
                     className="text-5xl md:text-8xl font-black italic uppercase tracking-tighter h-[1em] leading-none"
                   >
@@ -827,9 +828,9 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
                   </motion.h3>
                 </div>
                 <div className="mt-12 flex items-center justify-center gap-6 opacity-40 group-hover:opacity-100 transition-all group-hover:gap-10">
-                   <div className="w-12 h-[1px] bg-white" />
-                   <span className="text-xs font-bold uppercase tracking-[0.3em]">Return to Gallery</span>
-                   <div className="w-12 h-[1px] bg-white" />
+                  <div className="w-12 h-[1px] bg-white" />
+                  <span className="text-xs font-bold uppercase tracking-[0.3em]">Return to Gallery</span>
+                  <div className="w-12 h-[1px] bg-white" />
                 </div>
               </div>
             </section>
@@ -895,8 +896,8 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
                   className="mt-6 text-center max-w-2xl px-4 select-none pointer-events-none"
                 >
                   <span className="text-[9px] font-mono tracking-[0.4em] text-[#00f2fe] uppercase">
-                    {enlargedVideo.aspect === "portrait" 
-                      ? "Cinematic Presentation // Portrait Clip" 
+                    {enlargedVideo.aspect === "portrait"
+                      ? "Cinematic Presentation // Portrait Clip"
                       : "Cinematic Presentation // Landscape Detail"}
                   </span>
                   <h3 className="text-sm md:text-base font-bold uppercase tracking-wider text-white mt-2">
@@ -987,7 +988,7 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
                       (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?auto=format&fit=crop&q=80&w=800";
                     }}
                   />
-                  
+
                   {/* Slider Progress Indicator */}
                   <div className="absolute bottom-4 right-4 bg-black/60 border border-white/10 px-3 py-1 text-[9px] font-mono tracking-widest text-[#00f2fe] uppercase">
                     {`${enlargedImage.index + 1} / ${images.length}`}
@@ -1017,11 +1018,11 @@ export default function ProjectDetail({ project, isOpen, onBack }: ProjectDetail
           </AnimatePresence>
 
           {/* Immersive PDF / Amazon Kindle Style Book Reader Overlay */}
-          <BookReader 
-            isOpen={!!enlargedPdf} 
-            onClose={() => setEnlargedPdf(null)} 
-            title={enlargedPdf?.caption || "SAFANA BRAND PROFILE"} 
-            pdfUrl={enlargedPdf?.url || ""} 
+          <BookReader
+            isOpen={!!enlargedPdf}
+            onClose={() => setEnlargedPdf(null)}
+            title={enlargedPdf?.caption || "SAFANA BRAND PROFILE"}
+            pdfUrl={enlargedPdf?.url || ""}
           />
 
         </motion.div>
