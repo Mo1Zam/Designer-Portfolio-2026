@@ -1,12 +1,12 @@
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ArrowRight, Play, ExternalLink } from "lucide-react";
-import { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import ProjectDetail from "./components/ProjectDetail.tsx";
 import VideoThumbnail from "./components/VideoThumbnail.tsx";
 import Lightbox from "./components/Lightbox.tsx";
 import ContactModal from "./components/ContactModal.tsx";
 import { Particles } from "./components/Particles.tsx";
-import { KineticText } from "@/src/components/ui/kinetic-text";
+import { KineticText } from "./components/ui/kinetic-text";
 import { usePingPongVideo } from "./lib/usePingPongVideo";
 
 const PROJECTS = [
@@ -53,7 +53,8 @@ const PROJECTS = [
     ],
     workflowBrief: "Designing bespoke graphic grids, creative typography pairings, and multi-platform layouts to build a strong, high-contrast visual brand identity."
   },
-   {   id: 2,
+  {
+    id: 2,
     title: "Logo | Animation",
     category: "Motion Graphic",
     aspect: "16/9",
@@ -109,7 +110,7 @@ const PROJECTS = [
     showTimeline: true,
     showGallery: true,
     galleryVideos: [
-      "https://res.cloudinary.com/darldfhin/video/upload/v1781289697/HJ_kids_effect_edit_with_filter_S2_V1_tjirza.mp4",
+      "/Videos/High Pace Edits/HJ kids_effect_edit_with_filter_S2_V1.mp4",
       "https://res.cloudinary.com/darldfhin/video/upload/v1781290804/Revolt_AD_1_hkcm7j.mp4",
       "https://res.cloudinary.com/darldfhin/video/upload/v1781289695/Ranbhumi_Teaser_v5_g4wzmw.mp4",
       "https://res.cloudinary.com/darldfhin/video/upload/v1781286883/Naman_Sir_Event_ive35v.mp4",
@@ -124,7 +125,7 @@ const PROJECTS = [
       "https://res.cloudinary.com/darldfhin/video/upload/v1781289728/WibhooX_Clean_Up_Drive_V2_smm8hp.mp4",
       "https://res.cloudinary.com/darldfhin/video/upload/v1781289698/Ranbhumi_Teaser_2_v7_loozli.mp4",
       "https://res.cloudinary.com/darldfhin/video/upload/v1781444368/Hyrox_AA23_edit_V4_eooc44.mp4",
-      
+
     ],
     galleryCaptions: [
       "Cinematic Voice-Over Portrait Flow",
@@ -153,7 +154,7 @@ const PROJECTS = [
     showTimeline: false,
     showGallery: true,
     workflowBrief: "Translating static interface layouts into smooth, interactive motion choreographies with customized cubic-bezier curves to enhance perceived responsiveness.",
-    galleryVideos : [
+    galleryVideos: [
       "https://res.cloudinary.com/darldfhin/video/upload/v1781289608/Iphone_Ad_qx9kfs.mp4",
       "https://res.cloudinary.com/darldfhin/video/upload/v1781293209/9_police_men_sentence_to_death_1_rdw3kt.mp4",
       "https://res.cloudinary.com/darldfhin/video/upload/v1781293212/Deoriya_by_pass-_wxk1tq.mp4",
@@ -213,49 +214,49 @@ const PROJECTS = [
     ],
     workflowBrief: "Constructing rigorous visual identity frameworks, defining strict typographical scale models, and supplying a cohesive palette matrix to support scalable global campaigns."
   },*/
-/*  {
-    id: 6,
-    title: "Editorial Design",
-    category: "Graphic Design",
-    aspect: "16/9",
-    color: "from-blue-500/20",
-    videoUrl: null,
-    posterUrl: null,
-    client: "Communicadance",
-    software: "Indesign, Photoshop, Illustrator",
-    video: "https://www.youtube.com/watch?v=kGgLndfREno",
-    timeline: "https://www.reddit.com/r/editors/comments/1dhit3q/how_do_you_take_a_super_highresolution_screenshot/",
-    description: "Complex computational fluid dynamics and organic particle simulation. This study creates realistic interaction points for a narrative short film.",
-    showTimeline: false,
-    showGallery: true,
-    workflowBrief: "Baking high-accuracy volumetric solvers, texturing cellular fluid vectors, and compositing raw simulation renders into seamless Cinematic-format overlays.",
-    galleryImages: [
-      "public/images/SAFANA Company Profile presentation A4 pdf.pdf",
-      "",
-      "",
-    ],
-    galleryCaptions: [
-      "SAFANA Corporate Brand Profile - Editorial Design A4 Presentation"
-    ]
-  },*/
+  /*  {
+      id: 6,
+      title: "Editorial Design",
+      category: "Graphic Design",
+      aspect: "16/9",
+      color: "from-blue-500/20",
+      videoUrl: null,
+      posterUrl: null,
+      client: "Communicadance",
+      software: "Indesign, Photoshop, Illustrator",
+      video: "https://www.youtube.com/watch?v=kGgLndfREno",
+      timeline: "https://www.reddit.com/r/editors/comments/1dhit3q/how_do_you_take_a_super_highresolution_screenshot/",
+      description: "Complex computational fluid dynamics and organic particle simulation. This study creates realistic interaction points for a narrative short film.",
+      showTimeline: false,
+      showGallery: true,
+      workflowBrief: "Baking high-accuracy volumetric solvers, texturing cellular fluid vectors, and compositing raw simulation renders into seamless Cinematic-format overlays.",
+      galleryImages: [
+        "public/images/SAFANA Company Profile presentation A4 pdf.pdf",
+        "",
+        "",
+      ],
+      galleryCaptions: [
+        "SAFANA Corporate Brand Profile - Editorial Design A4 Presentation"
+      ]
+    },*/
 
-/*  {
-    id: 7,
-    title: "Package Design",
-    category: "Design",
-    aspect: "16/9",
-    color: "from-purple-500/20",
-    videoUrl: null,
-    posterUrl: null,
-    client: "Freelance",
-    software: "Photoshop, Illustrator",
-    video: "https://www.youtube.com/watch?v=CH7nB61F6I0",
-    timeline: "https://www.reddit.com/r/editors/comments/1dhit3q/how_do_you_take_a_super_highresolution_screenshot/",
-    description: "An atmospheric title sequence exploring time-dilation effects. We utilize macro-cinematography combined with extreme dynamic slow-motion editing.",
-    showTimeline: true,
-    showGallery: false,
-    workflowBrief: "Stylizing visual contrast via HDR color-grading tables, syncing temporal drift effects to custom-engineered soundscapes, and perfecting cinematic titles."
-  },*/
+  /*  {
+      id: 7,
+      title: "Package Design",
+      category: "Design",
+      aspect: "16/9",
+      color: "from-purple-500/20",
+      videoUrl: null,
+      posterUrl: null,
+      client: "Freelance",
+      software: "Photoshop, Illustrator",
+      video: "https://www.youtube.com/watch?v=CH7nB61F6I0",
+      timeline: "https://www.reddit.com/r/editors/comments/1dhit3q/how_do_you_take_a_super_highresolution_screenshot/",
+      description: "An atmospheric title sequence exploring time-dilation effects. We utilize macro-cinematography combined with extreme dynamic slow-motion editing.",
+      showTimeline: true,
+      showGallery: false,
+      workflowBrief: "Stylizing visual contrast via HDR color-grading tables, syncing temporal drift effects to custom-engineered soundscapes, and perfecting cinematic titles."
+    },*/
 ];
 
 function getYouTubeId(url: string | null | undefined): string | null {
@@ -344,9 +345,9 @@ function UniversalVideoBackground({ url, lowDataMode }: UniversalVideoBackground
       muted
       playsInline
       controlsList="nodownload"
-      onContextMenu={(e) => e.preventDefault()}
+      onContextMenu={(e: React.MouseEvent) => e.preventDefault()}
       className="w-full h-full object-cover grayscale opacity-40 scale-105"
-      poster={null}
+      poster={undefined}
     >
       <source src={url} type="video/mp4" />
     </video>
@@ -358,7 +359,7 @@ export default function App() {
   const [lowDataMode, setLowDataMode] = useState<boolean>(() => {
     const stored = localStorage.getItem("low_data_mode");
     if (stored !== null) return stored === "true";
-    
+
     // Auto-detect slow connection (2G, 3G or SaveData toggle in modern browser engines)
     if (typeof navigator !== "undefined" && (navigator as any).connection) {
       const conn = (navigator as any).connection;
@@ -452,7 +453,7 @@ export default function App() {
     };
 
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
-    
+
     // Scan elements with a slight delay to ensure correct initialization in dynamic pages
     const timeoutId = setTimeout(() => {
       const elementsToObserve = document.querySelectorAll(".reveal-fade, .reveal-slide-up");
@@ -467,13 +468,13 @@ export default function App() {
     };
   }, []);
 
-  const selectedProject = useMemo(() => 
-    PROJECTS.find(p => p.id === selectedProjectId), 
-  [selectedProjectId]);
+  const selectedProject = useMemo(() =>
+    PROJECTS.find(p => p.id === selectedProjectId),
+    [selectedProjectId]);
 
-  const lightboxProject = useMemo(() => 
-    PROJECTS.find(p => p.id === lightboxProjectId), 
-  [lightboxProjectId]);
+  const lightboxProject = useMemo(() =>
+    PROJECTS.find(p => p.id === lightboxProjectId),
+    [lightboxProjectId]);
 
   const handleProjectSelect = (id: number) => {
     const projectItem = PROJECTS.find(p => p.id === id);
@@ -548,38 +549,37 @@ export default function App() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 25 }}
-            className={`pointer-events-auto flex flex-col md:flex-row md:items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border ${
-              scrolled
+            className={`pointer-events-auto flex flex-col md:flex-row md:items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border ${scrolled
                 ? "w-full max-w-lg px-4 md:px-5 py-2 md:py-2.5 rounded-full bg-black/60 backdrop-blur-2xl border-white/20 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_20px_50px_rgba(0,0,0,0.8)]"
                 : "w-full max-w-5xl px-6 md:px-8 py-3.5 md:py-4 rounded-[60px] bg-[#0c0c0e]/30 backdrop-blur-xl border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_12px_44px_rgba(0,0,0,0.5)]"
-            } ${mobileMenuOpen ? "!rounded-3xl max-w-sm md:max-w-lg" : ""}`}
+              } ${mobileMenuOpen ? "!rounded-3xl max-w-sm md:max-w-lg" : ""}`}
             style={{
               marginTop: scrolled ? "16px" : "24px"
             }}
           >
             {/* Header / Brand */}
             <div className="flex items-center justify-between w-full md:w-auto">
-              <span 
+              <span
                 className="text-sm font-black tracking-tighter uppercase cursor-pointer text-white hover:text-[#00f2fe] transition-colors duration-300 flex items-center gap-2 select-none"
                 onClick={() => {
                   handleBack();
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                <img 
-                  src="/images/Website icons/LogoLogo.png" 
-                  alt="Mohammad Azam Logo" 
+                <img
+                  src="/images/Website icons/LogoLogo.png"
+                  alt="Mohammad Azam Logo"
                   className="h-5 w-auto object-contain filter hover:scale-105 transition-all duration-300"
                   referrerPolicy="no-referrer"
-                  onError={(e) => {
+                  onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                     (e.target as HTMLImageElement).src = "/images/Website icons/Main Logo.png";
                   }}
                 />
                 <span>M. Azam</span>
               </span>
-              
+
               {/* Mobile Menu Toggle Button */}
-              <button 
+              <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden p-1.5 rounded-full text-white/70 hover:text-white transition-colors duration-200"
               >
@@ -595,7 +595,7 @@ export default function App() {
                   href={item.href || undefined}
                   onMouseEnter={() => setHoveredTab(item.id)}
                   onMouseLeave={() => setHoveredTab(null)}
-                  onClick={(e) => {
+                  onClick={(e: React.MouseEvent) => {
                     if (item.action) {
                       e.preventDefault();
                       item.action();
@@ -636,7 +636,7 @@ export default function App() {
                     <a
                       key={item.id}
                       href={item.href || undefined}
-                      onClick={(e) => {
+                      onClick={(e: React.MouseEvent) => {
                         setMobileMenuOpen(false);
                         if (item.action) {
                           e.preventDefault();
@@ -665,7 +665,7 @@ export default function App() {
         <section className="relative h-screen w-full flex items-center px-6 md:px-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-b from-charcoal/20 via-charcoal/40 to-charcoal z-10" />
-            <UniversalVideoBackground url="https://res.cloudinary.com/darldfhin/video/upload/v1781962216/Hero_Page_cvw4gf.mp4" lowDataMode={lowDataMode} />
+            <UniversalVideoBackground url="/Videos/Thumnails/Hero Page.mp4" lowDataMode={lowDataMode} />
           </div>
 
           <div className="relative z-20 w-full pt-20">
@@ -682,7 +682,7 @@ export default function App() {
               />
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="mt-12 flex flex-col md:flex-row md:items-end justify-between gap-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -691,7 +691,7 @@ export default function App() {
               <p className="max-w-sm text-sm opacity-40 leading-relaxed uppercase tracking-wider">
                 Started in coding, shifted to design & video editing.
               </p>
-              
+
               <div className="flex items-center gap-6">
                 <div className="w-16 h-[1px] bg-white/30" />
                 <span className="text-[10px] font-mono opacity-60 tracking-widest">SHOWREEL '26</span>
@@ -725,7 +725,7 @@ export default function App() {
                     I am <span className="text-white font-medium italic">Mohammad Azam</span>, a professional video editor and graphic designer operating at the sharp end of digital media. With a Bachelor of Computer Applications degree and a Diploma of Advanced Media and Animation, my technical foundation is anchored in <span className="text-white font-medium italic">Adobe Premiere Pro and After Effects</span>. I specialize in transforming raw footage into high-impact narratives that thrive in the fast-paced ecosystems of top-tier agencies like <span className="opacity-60">Viral Buzz</span>, <span className="opacity-60">Designfin Studio</span>, and <span className="opacity-60">Communicadance</span>.
                   </p>
                 </div>
-                
+
                 <p className="reveal-slide-up text-sm opacity-45 leading-relaxed" style={{ transitionDelay: "150ms" }}>
                   My workflow is built for scale without sacrificing precision. I have a proven track record of high-velocity production, notably delivering <span className="text-white font-bold tracking-tighter">64 dynamic reels in a single month</span> while maintaining absolute control over pacing, visual rhythm, and brand impact. I don't just edit content; I engineer experiences that command attention.
                 </p>
@@ -735,7 +735,7 @@ export default function App() {
               <div className="md:col-span-5 space-y-8">
                 <div>
                   <h2 className="reveal-slide-up text-[10px] font-bold uppercase tracking-[0.3em] opacity-30 mb-8" id="skills-header">Skills & Software</h2>
-                  
+
                   {/* Tool List with software icons uploaded by user */}
                   <div className="grid grid-cols-3 gap-3" id="skills-software-grid">
                     {[
@@ -746,15 +746,15 @@ export default function App() {
                       { name: "Figma", icon: "/images/Software icons/Figma.png" },
                       { name: "Gemini AI", icon: "/images/Software icons/gemini.png" },
                     ].map((tool, idx) => (
-                      <div 
-                        key={tool.name} 
+                      <div
+                        key={tool.name}
                         id={`skill-card-${tool.name.toLowerCase().replace(/\s+/g, '-')}`}
                         className="bg-white/[0.01] border border-white/5 rounded-xl p-3 flex flex-col items-center justify-center gap-2 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 group"
                       >
                         <div className="w-8 h-8 flex items-center justify-center relative">
-                          <img 
-                            src={tool.icon} 
-                            alt={tool.name} 
+                          <img
+                            src={tool.icon}
+                            alt={tool.name}
                             className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-300"
                             referrerPolicy="no-referrer"
                           />
@@ -780,7 +780,7 @@ export default function App() {
                       "Brand Storytelling",
                       "AI-Assisted Pre-production"
                     ].map((skill, sIdx) => (
-                      <span 
+                      <span
                         key={skill}
                         id={`expert-badge-${sIdx}`}
                         className="text-[10px] px-3 py-1.5 rounded-full bg-white/[0.02] border border-white/5 text-white/60 font-light hover:text-white hover:border-white/20 transition-all cursor-default"
@@ -811,12 +811,12 @@ export default function App() {
 
             <div className="masonry-grid font-sans">
               {PROJECTS.map((project, index) => (
-                <div 
+                <div
                   key={project.id}
                   className="reveal-slide-up"
                   style={{ transitionDelay: `${(index % 3) * 150}ms` }}
                 >
-                  <VideoThumbnail 
+                  <VideoThumbnail
                     title={project.title}
                     category={project.category}
                     aspect={project.aspect}
@@ -840,7 +840,7 @@ export default function App() {
         </section>
 
         {/* Lightbox */}
-        <Lightbox 
+        <Lightbox
           isOpen={!!lightboxProject || showreelOpen}
           onClose={() => {
             setLightboxProjectId(null);
@@ -860,7 +860,7 @@ export default function App() {
                   Pushing the boundaries of visual storytelling through technical excellence and creative vision.
                 </p>
               </div>
-              
+
               <div className="space-y-4">
                 <h4 className="text-[10px] font-bold uppercase tracking-widest opacity-30">Connect</h4>
                 <div className="flex flex-col gap-2 text-sm">
@@ -874,7 +874,7 @@ export default function App() {
               <div className="space-y-4">
                 <h4 className="text-[10px] font-bold uppercase tracking-widest opacity-30">Location</h4>
                 <p className="text-sm opacity-60">
-                  Lucknow, India<br/>
+                  Lucknow, India<br />
                   26.8467° N, 80.9462° E
                 </p>
                 <div className="pt-4">
@@ -884,7 +884,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5 text-[10px] font-mono opacity-20">
               <span>© 2024 MOHAMMAD AZAM. ALL RIGHTS RESERVED.</span>
               <div className="flex gap-8">
@@ -897,15 +897,15 @@ export default function App() {
       </div>
 
       {/* Case Study Modal Overlay */}
-      <ProjectDetail 
-        project={selectedCaseStudy} 
+      <ProjectDetail
+        project={selectedCaseStudy}
         isOpen={!!selectedProjectId}
-        onBack={handleBack} 
+        onBack={handleBack}
       />
 
-      <ContactModal 
-        isOpen={isContactOpen} 
-        onClose={() => setIsContactOpen(false)} 
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
       />
     </div>
   );

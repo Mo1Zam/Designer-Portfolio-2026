@@ -112,7 +112,8 @@ function GalleryVideoItem({
 
     if (isIntersecting) {
       if (!isMobile) {
-        video.play().catch(() => {});
+        // Autoplay disabled to save bandwidth
+        // video.play().catch(() => {});
       }
     } else {
       video.pause();
