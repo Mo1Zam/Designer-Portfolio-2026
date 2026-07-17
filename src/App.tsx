@@ -20,7 +20,7 @@ const PROJECTS = [
     posterUrl: null,
     company: "Vutto | Puneet Wheels | Self-Initiated",
     software: "Illustrator, Photoshop",
-    video: "https://res.cloudinary.com/darldfhin/video/upload/v1781436727/Social_Media_Design_odmtoi.mp4",
+    video: "https://vimeo.com/1210849239?fl=tl&fe=ec",
     timeline: "https://www.reddit.com/r/editors/comments/1dhit3q/how_do_you_take_a_super_highresolution_screenshot/",
     description: "Marketing Campaigns built entirely from scratch to drive visual storytelling, boosting audience engagement and increasing digital sales metrics.",
     showTimeline: false,
@@ -63,7 +63,7 @@ const PROJECTS = [
     posterUrl: null,
     client: "Freelance | Self Initiated",
     software: "After Effects",
-    video: "https://res.cloudinary.com/darldfhin/video/upload/v1781956101/Logo-Animation_pmygu4.mp4",
+    video: "https://vimeo.com/1210849300?fl=tl&fe=ec",
     timeline: "https://www.reddit.com/r/editors/comments/1dhit3q/how_do_you_take_a_super_highresolution_screenshot/",
     description: "An atmospheric title sequence exploring time-dilation effects. We utilize macro-cinematography combined with extreme dynamic slow-motion editing.",
     showTimeline: false,
@@ -104,7 +104,7 @@ const PROJECTS = [
     posterUrl: null,
     client: "Viral Buzz | Designfins Studio",
     software: "After Effects, Premiere Pro, Gemini",
-    video: "https://res.cloudinary.com/darldfhin/video/upload/v1781436243/High_Pace_Video_Editing_j4kvtw.mp4",
+    video: "https://vimeo.com/1210849255?fl=tl&fe=ec",
     timeline: "https://www.reddit.com/r/editors/comments/1dhit3q/how_do_you_take_a_super_highresolution_screenshot/",
     description: "Vertical brand identity for social platforms, focusing on rhythm and typography-driven storytelling that captures contemporary digital trends.",
     showTimeline: true,
@@ -148,7 +148,7 @@ const PROJECTS = [
     posterUrl: null,
     client: "Viral Buzz",
     software: "After Effects, Adobe Premiere Pro, Photoshop, Illustrator",
-    video: "https://res.cloudinary.com/darldfhin/video/upload/v1781959847/Motion_Graphic_ujnwao.mp4",
+    video: "https://vimeo.com/1210849221?fl=tl&fe=ec",
     timeline: "https://www.reddit.com/r/editors/comments/1dhit3q/how_do_you_take_a_super_highresolution_screenshot/",
     description: "Interactive dashboard transitions and high-fidelity prototype animations designed to refine operational workflows for a scaling fintech application.",
     showTimeline: false,
@@ -664,7 +664,7 @@ export default function App() {
         <section className="relative h-screen w-full flex items-center px-6 md:px-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-b from-charcoal/20 via-charcoal/40 to-charcoal z-10" />
-            <UniversalVideoBackground url="/Videos/Thumnails/Hero%20Page.mp4" lowDataMode={lowDataMode} />
+            <UniversalVideoBackground url="https://vimeo.com/1210849249?fl=tl&fe=ec" lowDataMode={lowDataMode} />
           </div>
 
           <div className="relative z-20 w-full pt-20">
